@@ -15,6 +15,7 @@ login(model:any){
     map(user=>{
       if(user){
           localStorage.setItem('user',JSON.stringify(user));
+          debugger;
           this.currentUser.set(user);
       } 
     })
@@ -25,6 +26,7 @@ login(model:any){
     map(user=>{
       if(user){
           localStorage.setItem('user',JSON.stringify(user));
+         
           this.currentUser.set(user);
       } 
       return user;
