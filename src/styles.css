@@ -1,2 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap-icons";
+
+.memeber-tabset>.nav-tabs>li.active{
+    border-bottom: 4px solid #e95420;
+    position: relative;
+}
+.memeber-tabset>.nav-tabs>li.active>a{
+border: 0 !important;
+color: #333333;
+}
+.memeber-tabset >.nav-tabs > li.active > a > i{
+     color: #404040;
+    }
+
+    .memeber-tabset > .tab-content{
+       margin-top: -3px;
+       background-color: #fff;
+       border: 0px;
+       border-top: 1px solid #eee;
+       padding: 15px 0;
+       }

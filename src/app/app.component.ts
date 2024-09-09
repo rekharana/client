@@ -8,10 +8,18 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { AccountService } from './_services/account.service';
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from './register/register.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavComponent, CommonModule, NgbModule, RouterLink, HomeComponent,RegisterComponent],
+  
+  imports: [RouterOutlet, NavComponent,
+     CommonModule, NgbModule,
+     RouterLink, HomeComponent,
+     RegisterComponent, MemberCardComponent,
+     MemberDetailComponent],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

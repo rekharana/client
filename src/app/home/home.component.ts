@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RegisterComponent } from "../register/register.component";
 import { HttpClient } from '@angular/common/http';
 
@@ -9,27 +9,15 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
-  http= inject(HttpClient);
-registerMode=false;
-users:any;
-ngOnInit(): void {
-  this.getUsers();
-}
+export class HomeComponent  {
 
+registerMode=false;
 registerToggle(){
   this.registerMode=!this.registerMode;
 }
-getUsers(){
-  this.http.get('https://localhost:5001/api/users')
-  .subscribe({     
-    next:response=>{ this.users=response},
-    error: error=>console.error(),     
-    complete:()=>console.log('Request has been completed')
-  });
- } 
- cancelRegisterMode(event:boolean){
-  debugger
+
+ cancelRegisterMode(event:boolean)
+{
   console.log('cancelRegisterMode');
   this.registerMode=event;
  }
