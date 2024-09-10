@@ -15,6 +15,7 @@ login(model:any){
   return this.http.post<User>(this.baseurl+'account/login',model).pipe(
     map(user=>{
       if(user){
+        debugger;
           localStorage.setItem('user',JSON.stringify(user));
           this.currentUser.set(user);
       } 

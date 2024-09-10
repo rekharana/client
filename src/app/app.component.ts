@@ -10,6 +10,8 @@ import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from './register/register.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,7 +20,9 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
      CommonModule, NgbModule,
      RouterLink, HomeComponent,
      RegisterComponent, MemberCardComponent,
-     MemberDetailComponent],
+     MemberDetailComponent, MemberEditComponent,
+     NgxSpinnerComponent
+    ],
 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -26,10 +30,11 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 export class AppComponent {
   title = 'DatingApp';
   accountService= inject(AccountService); 
-users:any;
+  users:any;
 
   
   setCurrentUser(){
+    debugger;
     const userString= localStorage.getItem('user');
     if(!userString) return;
 
