@@ -12,6 +12,7 @@ import { MemberCardComponent } from './members/member-card/member-card.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -20,8 +21,10 @@ import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
      CommonModule, NgbModule,
      RouterLink, HomeComponent,
      RegisterComponent, MemberCardComponent,
-     MemberDetailComponent, MemberEditComponent,
-     NgxSpinnerComponent
+     MemberDetailComponent, 
+     MemberEditComponent,
+     NgxSpinnerComponent,
+     PhotoEditorComponent
     ],
 
   templateUrl: './app.component.html',
@@ -34,7 +37,6 @@ export class AppComponent {
 
   
   setCurrentUser(){
-    debugger;
     const userString= localStorage.getItem('user');
     if(!userString) return;
 
