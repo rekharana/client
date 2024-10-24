@@ -13,12 +13,14 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
   
   imports: [RouterOutlet, NavComponent,
      CommonModule, NgbModule,
+     
      RouterLink, HomeComponent,
      RegisterComponent, MemberCardComponent,
      MemberDetailComponent, 
@@ -31,7 +33,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'DatingApp';
+  title = 'NG';
   accountService= inject(AccountService); 
   users:any;
 

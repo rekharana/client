@@ -51,6 +51,20 @@ initializeUploader(){
     const updateMember ={...this.member()}
     this.member().photos.push(photo);
     this.memberChange1.emit(updateMember);
+    if(photo.isMain){
+      const user =this.accountService.currentUser();
+      if(user){
+        user.photoUrl= photo.url;
+        this.accountService.setCurrentUser(user);      
+      }
+      
+      updateMember.photoUrl=photo.url;     
+      updateMember.photos.forEach(p=>{     
+        if(p.isMain) p.isMain= false;
+        if(p.id===photo.id) p.isMain=true;        
+      }); 
+      this.memberChange1.emit(updateMember);
+    }
   }
 }
 
@@ -80,7 +94,7 @@ deletePhoto(photo:Photo){
     {  
     const updateMember= {...this.member()};
     updateMember.photos= updateMember.photos.filter(x=>x.id!==photo.id);
-    this.memberChange1.emit(updateMember);
+    this.memberChange1.emit(updateMember); 
    }
   });
 }
