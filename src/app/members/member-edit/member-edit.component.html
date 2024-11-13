@@ -29,13 +29,13 @@
                     <div>
                         <strong>LAst Active: </strong>
                 <p>
-                    {{member.lastActivity}}
+                    {{member.lastActivity | timeago}}
                 </p>
                 </div>
                 <div>
                     <strong>Member since: </strong>
                 <p>
-                {{member.createdDate}}
+                {{member.createdDate | date:'longDate'}}
                 </p>
                 </div>
               </div>
